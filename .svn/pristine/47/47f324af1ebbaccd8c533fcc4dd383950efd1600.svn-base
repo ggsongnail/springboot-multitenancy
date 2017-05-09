@@ -1,0 +1,25 @@
+spring:
+  jpa:
+    database: MYSQL
+    database-platform: org.hibernate.dialect.MySQLDialect
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+multitenant:
+  tenantKey: mxid
+  defaultTenant: mengtian
+multitenancy:
+  tenant:
+    myDataSources:
+      -
+        tenantId: mengtian
+        url: jdbc:mysql://192.168.217.128:3306/erp_mengtian
+        username: jony
+        password: jony888
+        driverClassName: com.mysql.jdbc.Driver
+      -
+        tenantId: musi
+        url: jdbc:mysql://192.168.217.128:3306/erp_musi
+        username: jony
+        password: jony888
+        driverClassName: com.mysql.jdbc.Driver
